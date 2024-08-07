@@ -2,9 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      outfit: ["Outfit", "sans-serif"],
-    },
+    fontFamily: {
+      body: ["Outfit", "sans-serif"],
+    }
   },
   plugins: [],
 };

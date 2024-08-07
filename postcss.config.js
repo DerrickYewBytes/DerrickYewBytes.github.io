@@ -9,5 +9,6 @@ export default {
       },
     },
     "postcss-css-variables": {},
+    "postcss-nested": {},
   },
 };

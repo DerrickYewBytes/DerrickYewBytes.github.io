@@ -6,14 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:css": "postcss src/css/tailwind.css -o src/css/index.css",
-    "watch:css": "postcss src/css/tailwind.css -o src/css/index.css -w",
+    "build:css": "postcss src/css/index.css -o src/css/output.css",
+    "watch:css": "postcss src/css/index.css -o src/css/output.css -w",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -30,6 +31,7 @@
     "postcss-cli": "^11.0.0",
     "postcss-css-variables": "^0.19.0",
     "postcss-import": "^16.1.0",
+    "postcss-nested": "^6.2.0",
     "postcss-preset-env": "^10.0.0",
     "prettier": "3.3.3",
     "tailwindcss": "^3.4.7",
