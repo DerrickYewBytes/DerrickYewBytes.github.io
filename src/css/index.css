@@ -1,10 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --dark-blue: #2d5be4;
+  --light-blue: #6f87cf;
+  --dark-sand: #eca643;
+  --light-sand: #fbddb4;
+  --baby-powder: #fbf9fe;
+
+  font-family: Outfit, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--light-sand);
   background-color: #242424;
 
   font-synthesis: none;
