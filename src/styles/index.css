@@ -54,14 +54,14 @@ hr {
   --light-blue: #6f87cf;
   --dark-sand: #eca643;
   --light-sand: #fbddb4;
-  --baby-powder: #fbf9fe;
+  --baby-powder: #F5F7F9;
 
   background-color: var(--baby-powder);
 }
 
 #main-container {
   &.large {
-    margin: auto 8rem;
+    margin: auto 12rem;
   }
   &.medium {
     margin: auto 4rem;
@@ -71,33 +71,46 @@ hr {
   }
 }
 
+.hightlight-text {
+  font-size: inherit;
+  color: var(--dark-sand);
+}
+
 #hero {
   display: flex;
+  gap: 6rem;
   margin-top: 14.5rem;
   .left-section {
-    flex: auto;
-    flex-direction: column;
+    @apply flex flex-col justify-between;
     h3 {
       font-size: 2rem;
       font-weight: bold;
       color: var(--dark-blue);
+      line-height: 1.2;
     }
     h1 {
       font-size: 4rem;
       font-weight: bold;
       color: var(--dark-sand);
+      line-height: 1.2;
+
     }
     h2 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: bold;
       color: var(--dark-blue);
+      line-height: 1.2;
     }
     h4 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 400;
       color: var(--dark-blue);
     }
   }
   .right-section {
+    #my-photo {
+      @apply object-cover rounded-md shadow-xl ring-4 ring-offset-8 ring-sands-dark;
+      height:22rem;
+    }
   }
 }
