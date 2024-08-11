@@ -12,8 +12,8 @@ function App() {
     <>
       <Hero screenSize={windowDimension} />
       <About />
-      {/* <Experience />
-      <ContactMe /> */}
+      {/* <Experience /> */}
+      <ContactMe />
     </>
   );
 }

@@ -60,6 +60,14 @@ hr {
   background-color: var(--baby-powder);
 }
 
+h1 {
+  @apply text-4xl font-bold mb-16;
+}
+
+h2 {
+  @apply text-2xl mb-12;
+}
+
 .central-content {
   @apply px-6 md:px-32 lg:px-48;
 }
@@ -161,12 +169,12 @@ hr {
   @apply bg-blue-deep;
 
   .content {
-    @apply  pt-32 pb-20;
+    @apply pt-32 pb-20;
   }
 
   @media (min-width: 1268px) {
     .content {
-      @apply pb-48
+      @apply pb-48;
     }
   }
   h1,
@@ -174,12 +182,8 @@ hr {
     @apply text-babyPowder;
   }
 
-  h1 {
-    @apply text-4xl font-bold mb-16;
-  }
-
   h2 {
-    @apply mb-12 text-2xl text-sands-dark;
+    @apply text-sands-dark;
   }
 
   p {
@@ -191,6 +195,56 @@ hr {
 
     .tech-logo {
       @apply w-9;
+    }
+  }
+}
+
+#contact {
+  @apply bg-sands-light;
+  .content {
+    @apply pt-48 pb-20;
+  }
+
+  @media (min-width: 1268px) {
+    .content {
+      @apply pt-32 pb-48;
+    }
+  }
+
+  h1 {
+    @apply text-sands-dark;
+  }
+
+  p {
+    @apply text-blue-deep font-bold;
+  }
+
+  .contact-links {
+    @apply flex justify-between flex-wrap w-9/12 mb-56;
+    .row {
+      @apply flex flex-col gap-8 mb-8 min-w-48;
+
+      a {
+        @apply text-blue-deep font-bold;
+        &:hover {
+          @apply underline cursor-pointer;
+        }
+      }
+    }
+  }
+  hr {
+    @apply bg-blue-deep mt-72;
+    height: 1px;
+    border: 0;
+  }
+
+  .footer {
+    @apply flex justify-between mt-2.5;
+    .footer-social {
+      @apply flex gap-2 items-center;
+      img {
+        @apply w-5 h-5;
+      }
     }
   }
 }
