@@ -18,7 +18,7 @@ export default withMt({
           dark: "#ECA643",
           light: "#FBDDB4",
         },
-        white: "#F5F7F9"
+        babyPowder: "#F5F7F9"
       }
     },
     fontFamily: {

@@ -15,6 +15,7 @@
 
 html,
 body {
+  @apply bg-babyPowder;
   height: 100%;
   font-family: sans-serif;
   line-height: 1.5;
@@ -59,16 +60,8 @@ hr {
   background-color: var(--baby-powder);
 }
 
-#main-container {
-  &.large {
-    margin: auto 12rem;
-  }
-  &.medium {
-    margin: auto 8rem;
-  }
-  &.small {
-    margin: auto 1.5rem;
-  }
+.central-content {
+  @apply px-6 md:px-32 lg:px-48;
 }
 
 .hightlight-text {
@@ -80,6 +73,7 @@ hr {
   @apply flex flex-col lg:flex-row;
   gap: 3rem;
   margin-top: 7rem;
+  margin-bottom: 5rem;
 
   @media (min-width: 1268px) {
     gap: 6rem;
@@ -159,6 +153,44 @@ hr {
         @apply flex-none;
         height: 22rem;
       }
+    }
+  }
+}
+
+#about {
+  @apply bg-blue-deep;
+
+  .content {
+    @apply  pt-32 pb-20;
+  }
+
+  @media (min-width: 1268px) {
+    .content {
+      @apply pb-48
+    }
+  }
+  h1,
+  p {
+    @apply text-babyPowder;
+  }
+
+  h1 {
+    @apply text-4xl font-bold mb-16;
+  }
+
+  h2 {
+    @apply mb-12 text-2xl text-sands-dark;
+  }
+
+  p {
+    @apply mb-14;
+  }
+
+  .logo-display {
+    @apply flex justify-center flex-wrap gap-5;
+
+    .tech-logo {
+      @apply w-9;
     }
   }
 }

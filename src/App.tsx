@@ -10,21 +10,10 @@ function App() {
 
   return (
     <>
-      <div
-        id="main-container"
-        className={
-          windowDimension === "large"
-            ? "large"
-            : windowDimension === "medium"
-              ? "medium"
-              : "small"
-        }
-      >
-        <Hero screenSize={windowDimension} />
-        {/* <About />
-      <Experience />
+      <Hero screenSize={windowDimension} />
+      <About />
+      {/* <Experience />
       <ContactMe /> */}
-      </div>
     </>
   );
 }

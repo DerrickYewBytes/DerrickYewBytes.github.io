@@ -6,23 +6,19 @@ type Props = { screenSize: "large" | "medium" | "small" };
 
 const Hero = (props: Props) => {
   return (
-    <>
+    <div id="hero" className="central-content">
       {props.screenSize === "large" ? (
         <>
-          <div id="hero">
-            <HeroSection />
-            <PhotoSection />
-          </div>
+          <HeroSection />
+          <PhotoSection />
         </>
       ) : props.screenSize === "medium" || props.screenSize === "small" ? (
         <>
-          <div id="hero">
-            <PhotoSection />
-            <HeroSection />
-          </div>
+          <PhotoSection />
+          <HeroSection />
         </>
       ) : null}
-    </>
+    </div>
   );
 };
 
