@@ -1,12 +1,22 @@
-import "./App.css";
+import About from "./pages/About";
+import ContactMe from "./pages/ContactMe";
+import Experience from "./pages/Experience";
+import Hero from "./pages/Hero";
+import useWindowDimensions from "./util/useWindowDimensions";
+import Header from "./layout/Header";
 
 function App() {
+  const windowDimension = useWindowDimensions();
 
-    return (
-        <>
-            <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Hero screenSize={windowDimension} />
+      <About />
+      <Experience screenSize={windowDimension}/>
+      <ContactMe />
+    </>
+  );
 }
 
 export default App;
