@@ -6,7 +6,7 @@ type Props = { screenSize: "large" | "medium" | "small" };
 
 const Hero = (props: Props) => {
   return (
-    <div id="hero" className="central-content">
+    <div id="hero" className="central-content page-top-spacing">
       {props.screenSize === "large" ? (
         <>
           <HeroSection />

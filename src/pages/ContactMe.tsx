@@ -10,7 +10,7 @@ const ContactMe = (props: Props) => {
   }
   return (
     <>
-      <div id="contact" className="central-content">
+      <div id="contact" className="central-content page-top-spacing">
         <div className="content">
           <h1>Say Hello</h1>
           <section className="contact-links">

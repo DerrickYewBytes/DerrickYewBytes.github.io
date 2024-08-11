@@ -70,16 +70,19 @@ h2 {
 
 .central-content {
   @apply px-6 md:px-32 lg:px-48;
-  @apply pt-32;
 
   &.break-right-form {
     @apply lg:pl-48 lg:pr-0;
   }
 }
 
+.page-top-spacing {
+  @apply pt-32;
+}
+
 @media (min-width: 1268px) {
-  .central-content {
-    @apply pt-52;
+  .page-top-spacing {
+    @apply pt-40;
   }
 }
 
@@ -88,10 +91,29 @@ h2 {
   color: var(--dark-sand);
 }
 
+#header {
+  @apply bg-babyPowder flex justify-between align-middle sticky top-0 py-10;
+
+  a {
+    @apply text-blue-deep;
+
+    &:hover {
+      @apply cursor-pointer;
+    }
+  }
+  .home {
+    @apply text-3xl font-medium;
+    line-height: 0;
+  }
+
+  .link {
+    @apply text-xl;
+    line-height: 1;
+  }
+}
+
 #hero {
-  @apply flex flex-col lg:flex-row;
-  gap: 3rem;
-  margin-bottom: 4rem;
+  @apply flex flex-col gap-12 mb-28 lg:flex-row;
 
   @media (min-width: 1268px) {
     gap: 6rem;
@@ -237,7 +259,7 @@ h2 {
     .carousel-item {
       @apply flex flex-col justify-center gap-8;
       img {
-        @apply object-cover
+        @apply object-cover;
       }
     }
     @media (min-width: 1268px) {

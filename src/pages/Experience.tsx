@@ -28,7 +28,7 @@ const EXPERIENCE = [
 const Experience = (props: Props) => {
   return (
     <>
-      <div id="experience" className="central-content break-right-form">
+      <div id="experience" className="central-content page-top-spacing break-right-form">
         <div className="content">
           <h1>Experience</h1>
           {EXPERIENCE.map((exp) => (

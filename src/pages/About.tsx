@@ -55,7 +55,7 @@ const techstack = [
 const About = (props: Props) => {
   return (
     <>
-      <div id="about" className="central-content">
+      <div id="about" className="central-content page-top-spacing">
         <div className="content">
           <h1>About</h1>
           <h2>Who am I?</h2>
