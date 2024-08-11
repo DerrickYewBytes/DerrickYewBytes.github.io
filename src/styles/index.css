@@ -71,6 +71,10 @@ h2 {
 .central-content {
   @apply px-6 md:px-32 lg:px-48;
   @apply pt-32;
+
+  &.break-right-form {
+    @apply lg:pl-48 lg:pr-0;
+  }
 }
 
 @media (min-width: 1268px) {
@@ -224,7 +228,7 @@ h2 {
     .tech-stack {
       @apply flex flex-wrap gap-2 mt-8 mb-32;
       p {
-        @apply text-blue-light
+        @apply text-blue-light;
       }
     }
   }
@@ -234,6 +238,11 @@ h2 {
       @apply flex flex-col justify-center gap-8;
       img {
         @apply object-cover
+      }
+    }
+    @media (min-width: 1268px) {
+      .carousel-item {
+        @apply flex-row;
       }
     }
   }
