@@ -6,7 +6,7 @@ function getWindowDimensions(): 'small' | 'medium' | 'large' {
     if (width < 768) {
         return 'small';
     }
-    if (width < 1024) {
+    if (width < 1268) {
         return 'medium';
     }
     return 'large';

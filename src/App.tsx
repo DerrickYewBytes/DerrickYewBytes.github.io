@@ -20,7 +20,7 @@ function App() {
               : "small"
         }
       >
-        <Hero />
+        <Hero screenSize={windowDimension} />
         {/* <About />
       <Experience />
       <ContactMe /> */}

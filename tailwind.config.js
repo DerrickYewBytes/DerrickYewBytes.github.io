@@ -4,6 +4,10 @@ const withMt = require("@material-tailwind/react/utils/withMT");
 export default withMt({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      'md': '768px',
+      'lg': '1268px'
+    },
     extend: {
       colors: {
         blue: {

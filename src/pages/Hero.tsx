@@ -1,49 +1,82 @@
 import MyPhoto from "../assets/my-photo.jpg";
 import { Button } from "@material-tailwind/react";
-type Props = {};
+import { GITHUB_URL, LINKEDIN_URL } from "../constants/links";
+
+type Props = { screenSize: "large" | "medium" | "small" };
 
 const Hero = (props: Props) => {
   return (
     <>
-      <div id="hero">
-        <div className="left-section">
-          <div className="flex flex-col justify-between h-full">
-            <section className="flex flex-col gap-3">
-              <div>
-                <h3>Hi, my name is</h3>
-                <h1>Derrick Yew</h1>
-                <h2>I build things for the web</h2>
-              </div>
-              <div>
-                <h4>
-                  I am a software engineer specializing in{" "}
-                  <span className="hightlight-text">front-end</span> and{" "}
-                  <span className="hightlight-text">back-end</span> development.
-                  I am open to both freelance and fulltime positions anywhere.
-                  Let's collab and create something incredible together!
-                </h4>
-              </div>
-            </section>
-            <section>
-              <div className="flex gap-2">
-                <Button variant="filled" className="bg-blue-deep">
-                  Linkedin
-                </Button>
-                <Button
-                  variant="outlined"
-                  className="border-2 border-sands-dark text-blue-deep"
-                >
-                  Github
-                </Button>
-              </div>
-            </section>
+      {props.screenSize === "large" ? (
+        <>
+          <div id="hero">
+            <HeroSection />
+            <PhotoSection />
           </div>
+        </>
+      ) : props.screenSize === "medium" || props.screenSize === "small" ? (
+        <>
+          <div id="hero">
+            <PhotoSection />
+            <HeroSection />
+          </div>
+        </>
+      ) : null}
+    </>
+  );
+};
+
+const HeroSection = () => {
+  function handleClick(link: string) {
+    window.open(link, "_blank");
+  }
+  return (
+    <section className="greet-section">
+      <div className="greet-header">
+        <div>
+          <h3>Hi, my name is</h3>
+          <h1>Derrick Yew</h1>
+          <h2>I build things for the web</h2>
         </div>
-        <div className="right-section basis-1/2">
-          <img id="my-photo" src={MyPhoto}/>
+        <div>
+          <h4>
+            I am a software engineer specializing in{" "}
+            <span className="hightlight-text">front-end</span> and{" "}
+            <span className="hightlight-text">back-end</span> development. I am
+            open to both freelance and fulltime positions anywhere. Let's collab
+            and create something incredible together!
+          </h4>
         </div>
       </div>
-    </>
+      <div className="greet-buttons">
+        <Button
+          variant="filled"
+          ripple
+          className="bg-blue-deep"
+          onClick={() => {
+            handleClick(LINKEDIN_URL);
+          }}
+        >
+          Linkedin
+        </Button>
+        <Button
+          variant="outlined"
+          ripple
+          className="border-2 border-sands-dark text-blue-deep"
+          onClick={() => handleClick(GITHUB_URL)}
+        >
+          Github
+        </Button>
+      </div>
+    </section>
+  );
+};
+
+const PhotoSection = () => {
+  return (
+    <section className="photo-section">
+      <img id="my-photo" src={MyPhoto} />
+    </section>
   );
 };
 

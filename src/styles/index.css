@@ -54,7 +54,7 @@ hr {
   --light-blue: #6f87cf;
   --dark-sand: #eca643;
   --light-sand: #fbddb4;
-  --baby-powder: #F5F7F9;
+  --baby-powder: #f5f7f9;
 
   background-color: var(--baby-powder);
 }
@@ -64,7 +64,7 @@ hr {
     margin: auto 12rem;
   }
   &.medium {
-    margin: auto 4rem;
+    margin: auto 8rem;
   }
   &.small {
     margin: auto 1.5rem;
@@ -77,40 +77,88 @@ hr {
 }
 
 #hero {
-  display: flex;
-  gap: 6rem;
-  margin-top: 14.5rem;
-  .left-section {
-    @apply flex flex-col justify-between;
+  @apply flex flex-col lg:flex-row;
+  gap: 3rem;
+  margin-top: 7rem;
+
+  @media (min-width: 1268px) {
+    gap: 6rem;
+    margin-top: 14.5rem;
+  }
+
+  .greet-section {
+    @apply flex flex-col justify-between h-full;
     h3 {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: bold;
       color: var(--dark-blue);
       line-height: 1.2;
     }
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: bold;
       color: var(--dark-sand);
       line-height: 1.2;
-
     }
     h2 {
-      font-size: 2.8rem;
+      font-size: 2rem;
       font-weight: bold;
       color: var(--dark-blue);
       line-height: 1.2;
     }
     h4 {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 400;
       color: var(--dark-blue);
     }
+
+    .greet-header {
+      @apply flex flex-col gap-3;
+    }
+
+    .greet-buttons {
+      @apply flex gap-2 mt-6;
+    }
+
+    @media (min-width: 1268px) {
+      h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--dark-blue);
+        line-height: 1.2;
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        color: var(--dark-sand);
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: 2.8rem;
+        font-weight: bold;
+        color: var(--dark-blue);
+        line-height: 1.2;
+      }
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--dark-blue);
+      }
+    }
   }
-  .right-section {
+  .photo-section {
+    @apply w-full flex justify-center;
     #my-photo {
-      @apply object-cover rounded-md shadow-xl ring-4 ring-offset-8 ring-sands-dark;
-      height:22rem;
+      @apply flex justify-center object-cover rounded-md shadow-xl ring-4 ring-offset-8 ring-sands-dark;
+      height: 18rem;
+      min-width: 15rem;
+    }
+
+    @media (min-width: 1268px) {
+      #my-photo {
+        @apply flex-none;
+        height: 22rem;
+      }
     }
   }
 }
