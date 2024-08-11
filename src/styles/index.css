@@ -174,7 +174,7 @@ h2 {
 
   @media (min-width: 1268px) {
     .content {
-      @apply pb-48;
+      @apply pt-52 pb-48;
     }
   }
   h1,
@@ -207,7 +207,7 @@ h2 {
 
   @media (min-width: 1268px) {
     .content {
-      @apply pt-32 pb-48;
+      @apply pt-52 pb-24;
     }
   }
 
@@ -232,10 +232,17 @@ h2 {
       }
     }
   }
+
   hr {
     @apply bg-blue-deep mt-72;
     height: 1px;
     border: 0;
+  }
+
+  @media (min-width: 1268px) {
+    hr {
+      @apply mt-0;
+    }
   }
 
   .footer {
