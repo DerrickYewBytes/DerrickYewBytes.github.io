@@ -1,10 +1,11 @@
 import DWPImg from "../assets/dating-pexels.png";
+import Carousel from "../components/Carousel";
 
 type Props = {
   screenSize: "small" | "medium" | "large";
 };
 
-type IExperienceItem = {
+export type IExperienceItem = {
   id: string;
   image: any;
   category: string;
@@ -28,20 +29,16 @@ const EXPERIENCE = [
 const Experience = (props: Props) => {
   return (
     <>
-      <div id="experience" className="central-content page-top-spacing break-right-form">
+      <div
+        id="experience"
+        className="central-content page-top-spacing break-right-form"
+      >
         <div className="content">
           <h1>Experience</h1>
-          {EXPERIENCE.map((exp) => (
-            <>
-              <div className="carousel">
-                {props.screenSize === "large" ? (
-                  <ExperienceItemLargeScreen key={exp.id} {...exp} />
-                ) : (
-                  <ExperienceItemSmallScreen key={exp.id} {...exp} />
-                )}
-              </div>
-            </>
-          ))}
+          <Carousel
+            data={EXPERIENCE}
+            RenderComponent={props.screenSize === "large" ? ExperienceItemLargeScreen : ExperienceItemSmallScreen}
+          />
         </div>
       </div>
     </>
@@ -51,7 +48,8 @@ const Experience = (props: Props) => {
 const ExperienceItemSmallScreen = (props: IExperienceItem) => {
   return (
     <div key={props.id} className="carousel-item">
-      <img src={props.image} />
+      <div></div>
+      <img src={props.image} className="carousel-item-photo" />
       <div>
         <h2>{props.category}</h2>
         <h1>{props.title}</h1>
@@ -79,7 +77,7 @@ const ExperienceItemLargeScreen = (props: IExperienceItem) => {
           ))}
         </div>
       </div>
-      <img src={props.image} />
+      <img src={props.image} className="carousel-item-photo" />
     </div>
   );
 };

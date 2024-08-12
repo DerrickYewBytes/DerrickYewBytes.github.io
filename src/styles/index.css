@@ -258,9 +258,9 @@ h2 {
   .carousel {
     .carousel-item {
       @apply flex flex-col justify-center gap-8;
-      img {
-        @apply object-cover;
-      }
+    }
+    img {
+      @apply object-cover;
     }
     @media (min-width: 1268px) {
       .carousel-item {
