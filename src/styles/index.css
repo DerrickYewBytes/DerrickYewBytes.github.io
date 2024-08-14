@@ -255,18 +255,17 @@ h2 {
     }
   }
 
-  .carousel {
-    .carousel-item {
-      @apply flex flex-col justify-center gap-8;
+  .experience-item {
+    @apply flex flex-col justify-center gap-8;
+  }
+  @media (min-width: 1268px) {
+    .experience-item {
+      @apply flex-row;
     }
-    img {
-      @apply object-cover;
-    }
-    @media (min-width: 1268px) {
-      .carousel-item {
-        @apply flex-row;
-      }
-    }
+  }
+
+  .experience-item-photo {
+    @apply object-cover;
   }
 }
 
@@ -324,5 +323,12 @@ h2 {
         @apply w-5 h-5;
       }
     }
+  }
+}
+
+.carousel {
+
+  .indicator {
+    
   }
 }

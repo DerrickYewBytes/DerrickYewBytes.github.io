@@ -3,6 +3,7 @@ import Carousel from "../components/Carousel";
 
 type Props = {
   screenSize: "small" | "medium" | "large";
+  reference: React.RefObject<HTMLDivElement>
 };
 
 export type IExperienceItem = {
@@ -32,12 +33,17 @@ const Experience = (props: Props) => {
       <div
         id="experience"
         className="central-content page-top-spacing break-right-form"
+        ref={props.reference}
       >
         <div className="content">
           <h1>Experience</h1>
           <Carousel
             data={EXPERIENCE}
-            RenderComponent={props.screenSize === "large" ? ExperienceItemLargeScreen : ExperienceItemSmallScreen}
+            RenderComponent={
+              props.screenSize === "large"
+                ? ExperienceItemLargeScreen
+                : ExperienceItemSmallScreen
+            }
           />
         </div>
       </div>
@@ -47,9 +53,8 @@ const Experience = (props: Props) => {
 
 const ExperienceItemSmallScreen = (props: IExperienceItem) => {
   return (
-    <div key={props.id} className="carousel-item">
-      <div></div>
-      <img src={props.image} className="carousel-item-photo" />
+    <div key={props.id} className="experience-item">
+      <img src={props.image} className="experience-item-photo" />
       <div>
         <h2>{props.category}</h2>
         <h1>{props.title}</h1>
@@ -66,7 +71,7 @@ const ExperienceItemSmallScreen = (props: IExperienceItem) => {
 
 const ExperienceItemLargeScreen = (props: IExperienceItem) => {
   return (
-    <div key={props.id} className="carousel-item">
+    <div key={props.id} className="experience-item">
       <div>
         <h2>{props.category}</h2>
         <h1>{props.title}</h1>
@@ -77,7 +82,7 @@ const ExperienceItemLargeScreen = (props: IExperienceItem) => {
           ))}
         </div>
       </div>
-      <img src={props.image} className="carousel-item-photo" />
+      <img src={props.image} className="experience-item-photo" />
     </div>
   );
 };

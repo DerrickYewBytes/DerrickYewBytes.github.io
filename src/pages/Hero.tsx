@@ -2,11 +2,18 @@ import MyPhoto from "../assets/my-photo.jpg";
 import { Button } from "@material-tailwind/react";
 import { GITHUB_URL, LINKEDIN_URL } from "../constants/links";
 
-type Props = { screenSize: "large" | "medium" | "small" };
+type Props = {
+  screenSize: "large" | "medium" | "small";
+  reference: React.RefObject<HTMLDivElement>;
+};
 
 const Hero = (props: Props) => {
   return (
-    <div id="hero" className="central-content page-top-spacing">
+    <div
+      id="hero"
+      ref={props.reference}
+      className="central-content page-top-spacing"
+    >
       {props.screenSize === "large" ? (
         <>
           <HeroSection />
