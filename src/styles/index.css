@@ -82,7 +82,7 @@ h2 {
 
 @media (min-width: 1268px) {
   .page-top-spacing {
-    @apply pt-40;
+    @apply pt-44;
   }
 }
 
@@ -92,13 +92,32 @@ h2 {
 }
 
 #header {
-  @apply bg-babyPowder flex justify-between align-middle sticky top-0 py-10;
-
+  @apply  flex justify-between align-middle sticky top-0 py-10;
+  
   a {
-    @apply text-blue-deep;
-
     &:hover {
       @apply cursor-pointer;
+    }
+  }
+
+  &.whitebg {
+    @apply bg-babyPowder;
+    a {
+      @apply text-blue-deep;
+    }
+  }
+
+  &.bluebg {
+    @apply bg-blue-deep;
+    a {
+      @apply text-babyPowder;
+    }
+  }
+
+  &.sandbg {
+    @apply bg-sands-light;
+    a {
+      @apply text-blue-deep;
     }
   }
   .home {

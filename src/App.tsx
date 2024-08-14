@@ -4,14 +4,59 @@ import Experience from "./pages/Experience";
 import Hero from "./pages/Hero";
 import useWindowDimensions from "./util/useWindowDimensions";
 import Header from "./layout/Header";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   const windowDimension = useWindowDimensions();
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
-  const experienceRef = useRef(null);
-  const contactRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const [currentSection, setCurrentSection] = useState<
+    "hero" | "about" | "experience" | "contact"
+  >("hero");
+
+  useEffect(() => {
+    console.log("section:", currentSection);
+  
+  }, [currentSection])
+  
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroTop = heroRef.current?.getBoundingClientRect().top;
+      const aboutTop = aboutRef.current?.getBoundingClientRect().top;
+      const experienceTop = experienceRef.current?.getBoundingClientRect().top;
+      const contactTop = contactRef.current?.getBoundingClientRect().top;
+      if (heroTop && aboutTop && experienceTop && contactTop) {
+        if (heroTop < 50) {
+          setCurrentSection("hero");
+        }
+        if (aboutTop < 50) {
+          setCurrentSection("about");
+        }
+        if (experienceTop < 50) {
+          setCurrentSection("experience");
+        }
+        if (contactTop < 50) {
+          setCurrentSection("contact");
+        }
+      }
+    };
+    window.addEventListener("scroll", () => {
+      if (
+        heroRef.current &&
+        aboutRef.current &&
+        experienceRef.current &&
+        contactRef.current
+      ) {
+        handleScroll();
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -22,6 +67,7 @@ function App() {
           experience: experienceRef,
           contact: contactRef,
         }}
+        currentSection={currentSection}
       />
       <Hero screenSize={windowDimension} reference={heroRef} />
       <About reference={aboutRef} />

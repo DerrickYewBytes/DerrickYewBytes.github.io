@@ -6,6 +6,7 @@ type Props = {
     experience: React.RefObject<HTMLDivElement>;
     contact: React.RefObject<HTMLDivElement>;
   };
+  currentSection: "hero" | "about" | "experience" | "contact";
 };
 
 const Header = (props: Props) => {
@@ -17,7 +18,6 @@ const Header = (props: Props) => {
         });
         break;
       case "about":
-
         props.referenceList.about.current?.scrollIntoView({
           behavior: "smooth",
         });
@@ -35,9 +35,21 @@ const Header = (props: Props) => {
     }
   }
 
+  const setHeaderColor = () => {
+    if (props.currentSection === "hero") {
+      return "whitebg";
+    } else if (props.currentSection === "about") {
+      return "bluebg";
+    } else if (props.currentSection === "experience") {
+      return "whitebg";
+    } else if (props.currentSection === "contact") {
+      return "sandbg";
+    }
+  };
+
   return (
     <>
-      <div id="header" className="central-content">
+      <div id="header" className={`central-content ${setHeaderColor()}`}>
         <div>
           <a className="home" onClick={() => handleClick("hero")}>
             derrick yew
