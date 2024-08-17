@@ -1,5 +1,5 @@
+import { Button } from "antd";
 import MyPhoto from "../assets/my-photo.jpg";
-import { Button } from "@material-tailwind/react";
 import { GITHUB_URL, LINKEDIN_URL } from "../constants/links";
 
 type Props = {
@@ -53,9 +53,9 @@ const HeroSection = () => {
       </div>
       <div className="greet-buttons">
         <Button
-          variant="filled"
-          ripple
-          className="bg-blue-deep"
+          type="primary"
+          size="large"
+          className="px-8 py-4 bg-blue-deep"
           onClick={() => {
             handleClick(LINKEDIN_URL);
           }}
@@ -63,9 +63,8 @@ const HeroSection = () => {
           Linkedin
         </Button>
         <Button
-          variant="outlined"
-          ripple
-          className="border-2 border-sands-dark text-blue-deep"
+          className="px-8 py-4 border-2 border-sands-dark text-blue-deep"
+          size="large"
           onClick={() => handleClick(GITHUB_URL)}
         >
           Github

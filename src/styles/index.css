@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+@layer base {
+  @font-face {
+    font-family: "Outfit";
+    src: url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -68,32 +78,34 @@ h2 {
   @apply text-2xl;
 }
 
-.central-content {
-  @apply px-6 md:px-32 lg:px-48;
+@layer utilities {
+  .central-content {
+    @apply px-6 md:px-32 lg:px-48;
 
-  &.break-right-form {
-    @apply lg:pl-48 lg:pr-0;
+    &.break-right-form {
+      @apply lg:pl-48 lg:pr-0;
+    }
   }
-}
 
-.page-top-spacing {
-  @apply pt-32;
-}
-
-@media (min-width: 1268px) {
   .page-top-spacing {
-    @apply pt-44;
+    @apply pt-32;
   }
-}
 
-.hightlight-text {
-  font-size: inherit;
-  color: var(--dark-sand);
+  @media (min-width: 1268px) {
+    .page-top-spacing {
+      @apply pt-44;
+    }
+  }
+
+  .hightlight-text {
+    font-size: inherit;
+    color: var(--dark-sand);
+  }
 }
 
 #header {
-  @apply  flex justify-between align-middle sticky top-0 py-10;
-  
+  @apply flex justify-between align-middle sticky top-0 py-10;
+
   a {
     &:hover {
       @apply cursor-pointer;
@@ -284,70 +296,131 @@ h2 {
   }
 
   .experience-item-photo {
-    @apply object-cover w-96;
+    @apply object-cover w-full;
   }
 }
 
-#contact {
-  @apply bg-sands-light;
-  .content {
-    @apply pb-20;
-  }
-
-  @media (min-width: 1268px) {
+@layer components {
+  #contact {
+    @apply bg-sands-light;
     .content {
-      @apply pb-24;
+      @apply pb-20;
     }
-  }
 
-  h1 {
-    @apply text-sands-dark mb-36;
-  }
+    @media (min-width: 1268px) {
+      .content {
+        @apply pb-24;
+      }
+    }
 
-  p {
-    @apply text-blue-deep font-bold;
-  }
+    h1 {
+      @apply text-sands-dark mb-36;
+    }
 
-  .contact-links {
-    @apply flex justify-between flex-wrap w-9/12 mb-56;
-    .row {
-      @apply flex flex-col gap-8 mb-8 min-w-48;
+    p {
+      @apply text-blue-deep font-bold;
+    }
 
-      a {
-        @apply text-blue-deep font-bold;
-        &:hover {
-          @apply underline cursor-pointer;
+    .contact-links {
+      @apply flex justify-between flex-wrap w-9/12 mb-56;
+      .row {
+        @apply flex flex-col gap-8 mb-8 min-w-48;
+
+        a {
+          @apply text-blue-deep font-bold;
+          &:hover {
+            @apply underline cursor-pointer;
+          }
+        }
+      }
+    }
+
+    hr {
+      @apply bg-blue-deep mt-72;
+      height: 1px;
+      border: 0;
+    }
+
+    @media (min-width: 1268px) {
+      hr {
+        @apply mt-0;
+      }
+    }
+
+    .footer {
+      @apply flex justify-between mt-2.5;
+      .footer-social {
+        @apply flex gap-2 items-center;
+        img {
+          @apply w-5 h-5;
         }
       }
     }
   }
 
-  hr {
-    @apply bg-blue-deep mt-72;
-    height: 1px;
-    border: 0;
-  }
+  .carousel-wrapper {
+    --carousel-card-num-in-screen: 1;
+    --carousel-card-width: calc(80vw / var(--carousel-card-num-in-screen));
+    --carousel-width: calc(
+      var(--carousel-card-width) * var(--carousel-card-num-in-screen)
+    );
+    @apply overflow-hidden relative;
 
-  @media (min-width: 1268px) {
-    hr {
-      @apply mt-0;
+    .button-prev,
+    .button-next {
+      @apply absolute cursor-pointer;
     }
-  }
 
-  .footer {
-    @apply flex justify-between mt-2.5;
-    .footer-social {
-      @apply flex gap-2 items-center;
-      img {
-        @apply w-5 h-5;
+    .indicator {
+      .dot {
+        @apply bg-blue-light opacity-50;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 1.5rem;
+        margin: 0 0.3rem;
+        outline: none;
+        transform: scale(0.5);
+        width: 1.5rem;
+        &.active {
+          @apply bg-blue-deep opacity-100;
+        }
+      }
+    }
+    .carousel {
+      @apply flex;
+      width: var(--carousel-width);
+
+      &.prev {
+        animation-duration: 0.6s;
+        animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+        animation-name: prev;
+      }
+
+      &.next {
+        animation-duration: 0.6s;
+        animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+        animation-name: next;
       }
     }
   }
 }
 
-.carousel {
 
-  .indicator {
-    
-  }
+.ant-carousel .slick-prev,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-prev:focus {
+  font-size: inherit;
+  left: 10px;
+  z-index: 2;
+  color: blueviolet;
+}
+
+.ant-carousel .slick-next,
+.ant-carousel .slick-next:hover,
+.ant-carousel .slick-next:focus {
+  font-size: inherit;
+  right: 10px;
+  z-index: 2;
+  color: blueviolet;
 }

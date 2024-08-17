@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const withMt = require("@material-tailwind/react/utils/withMT");
 
-export default withMt({
+export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
@@ -28,4 +27,4 @@ export default withMt({
   plugins: [
     // require('daisyui'),
   ],
-});
+};

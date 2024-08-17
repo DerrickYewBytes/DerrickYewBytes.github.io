@@ -1,7 +1,8 @@
 import DWPImg from "../assets/dating-pexels.png";
-import Carousel from "../components/Carousel";
-import CTCImg from "../assets/ctc.png";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 import CTCCMSImg from "../assets/ctc-cms.png";
+import CTCImg from "../assets/ctc.png";
+import CarouselCustom from "../components/CarouselCustom";
 
 type Props = {
   screenSize: "small" | "medium" | "large";
@@ -73,7 +74,7 @@ const Experience = (props: Props) => {
       >
         <div className="content">
           <h1>Experience</h1>
-          <Carousel
+          <CarouselCustom
             data={EXPERIENCE}
             RenderComponent={
               props.screenSize === "large"
