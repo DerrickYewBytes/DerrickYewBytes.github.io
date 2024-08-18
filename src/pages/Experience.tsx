@@ -45,23 +45,23 @@ const EXPERIENCE = [
       "Mailchimp",
     ],
   },
-  {
-    id: "03",
-    image: CTCCMSImg,
-    category: "Content Management System",
-    title: "Changi Travel Circle CMS",
-    description:
-      "Equips administrators with powerful features for effective user data management while maintaining high security standards. Automated scheduling promptly eliminates expired promotions, ensuring continuous user engagement. A key highlight is dynamic content segmentation, delivering personalized content based on user demographics and behavior, distinguishing our CMS as a pioneer in travel industry content management.",
-    techStack: [
-      "NestJs",
-      "Typescript",
-      "MySql",
-      "Redis",
-      "TypeORM",
-      "AWS Lambda",
-      "Mailchimp",
-    ],
-  },
+  // {
+  //   id: "03",
+  //   image: CTCCMSImg,
+  //   category: "Content Management System",
+  //   title: "Changi Travel Circle CMS",
+  //   description:
+  //     "Equips administrators with powerful features for effective user data management while maintaining high security standards. Automated scheduling promptly eliminates expired promotions, ensuring continuous user engagement. A key highlight is dynamic content segmentation, delivering personalized content based on user demographics and behavior, distinguishing our CMS as a pioneer in travel industry content management.",
+  //   techStack: [
+  //     "NestJs",
+  //     "Typescript",
+  //     "MySql",
+  //     "Redis",
+  //     "TypeORM",
+  //     "AWS Lambda",
+  //     "Mailchimp",
+  //   ],
+  // },
 ];
 
 const Experience = (props: Props) => {
@@ -69,10 +69,10 @@ const Experience = (props: Props) => {
     <>
       <div
         id="experience"
-        className="central-content page-top-spacing break-right-form"
+        className="central-content page-top-spacing"
         ref={props.reference}
       >
-        <div className="content">
+        <div>
           <h1>Experience</h1>
           <CarouselCustom
             data={EXPERIENCE}
@@ -92,7 +92,7 @@ const ExperienceItemSmallScreen = (props: IExperienceItem) => {
   return (
     <div key={props.id} className="experience-item">
       <img src={props.image} className="experience-item-photo" />
-      <div>
+      <div className="experience-item-content">
         <h2>{props.category}</h2>
         <h1>{props.title}</h1>
         <p>{props.description}</p>
@@ -109,7 +109,7 @@ const ExperienceItemSmallScreen = (props: IExperienceItem) => {
 const ExperienceItemLargeScreen = (props: IExperienceItem) => {
   return (
     <div key={props.id} className="experience-item">
-      <div>
+      <div className="experience-item-content">
         <h2>{props.category}</h2>
         <h1>{props.title}</h1>
         <p>{props.description}</p>
@@ -119,7 +119,7 @@ const ExperienceItemLargeScreen = (props: IExperienceItem) => {
           ))}
         </div>
       </div>
-      <img src={props.image} className="experience-item-photo" />
+      <img src={props.image} className="experience-item-photo basis-6/12" />
     </div>
   );
 };
