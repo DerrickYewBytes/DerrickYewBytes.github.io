@@ -45,23 +45,23 @@ const EXPERIENCE = [
       "Mailchimp",
     ],
   },
-  // {
-  //   id: "03",
-  //   image: CTCCMSImg,
-  //   category: "Content Management System",
-  //   title: "Changi Travel Circle CMS",
-  //   description:
-  //     "Equips administrators with powerful features for effective user data management while maintaining high security standards. Automated scheduling promptly eliminates expired promotions, ensuring continuous user engagement. A key highlight is dynamic content segmentation, delivering personalized content based on user demographics and behavior, distinguishing our CMS as a pioneer in travel industry content management.",
-  //   techStack: [
-  //     "NestJs",
-  //     "Typescript",
-  //     "MySql",
-  //     "Redis",
-  //     "TypeORM",
-  //     "AWS Lambda",
-  //     "Mailchimp",
-  //   ],
-  // },
+  {
+    id: "03",
+    image: CTCCMSImg,
+    category: "Content Management System",
+    title: "Changi Travel Circle CMS",
+    description:
+      "Equips administrators with powerful features for effective user data management while maintaining high security standards. Automated scheduling promptly eliminates expired promotions, ensuring continuous user engagement. A key highlight is dynamic content segmentation, delivering personalized content based on user demographics and behavior, distinguishing our CMS as a pioneer in travel industry content management.",
+    techStack: [
+      "NestJs",
+      "Typescript",
+      "MySql",
+      "Redis",
+      "TypeORM",
+      "AWS Lambda",
+      "Mailchimp",
+    ],
+  },
 ];
 
 const Experience = (props: Props) => {
