@@ -22,6 +22,10 @@
   font-weight: 400;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   @apply bg-babyPowder;
