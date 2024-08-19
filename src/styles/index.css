@@ -306,12 +306,14 @@ h2 {
     }
     .experience-item {
       @apply flex-row items-start;
+      height: 77vh;
       .experience-item-content {
         @apply pt-10;
       }
     }
     .experience-item-photo {
       @apply h-full object-cover;
+      width: 50vw;
       /* flex-shrink: 0; */
       /* min-width: 100%; */
       /* min-height: 100% */
