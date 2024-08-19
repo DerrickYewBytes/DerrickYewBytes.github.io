@@ -299,13 +299,16 @@ h2 {
 
 @media (min-width: 1268px) {
   #experience {
-    @apply break-right-form;
+    /* @apply break-right-form; */
 
     h1 {
       @apply mb-0;
+      &.title {
+        @apply pl-48;
+      }
     }
     .experience-item {
-      @apply flex-row items-start;
+      @apply flex-row items-start pl-48;
       height: 77vh;
       .experience-item-content {
         @apply pt-10;
@@ -452,7 +455,7 @@ h2 {
       }
     }
     .ui {
-      left: 18%;
+      left: 29%;
     }
   }
 }

@@ -69,11 +69,11 @@ const Experience = (props: Props) => {
     <>
       <div
         id="experience"
-        className="central-content page-top-spacing"
+        className="page-top-spacing"
         ref={props.reference}
       >
         <div>
-          <h1>Experience</h1>
+          <h1 className="title">Experience</h1>
           <CarouselCustom
             data={EXPERIENCE}
             RenderComponent={
