@@ -332,7 +332,7 @@ h2 {
 
   @media (min-width: 1268px) {
     .content {
-      @apply pb-24;
+      @apply pb-14;
     }
   }
 
