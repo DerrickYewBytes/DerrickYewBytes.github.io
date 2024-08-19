@@ -34,7 +34,7 @@ const EXPERIENCE = [
     category: "E-commerce",
     title: "Changi Travel Circle",
     description:
-      "Changi Airport Group's B2B program connecting global travel trade partners with Changi Airport. Offering an array of features catering to both B2B and B2C users such as personalized favorites, convenient downloads, and efficient account management, alongside a comprehensive global search function. Leveraging a fully customized CMS, content is dynamically tailored to each user's preferences and demographics, ensuring an engaging and personalized experience for all users.",
+      "Changi Airport Group's B2B program links global travel trade partners with Changi airport, offering features like personalized favorites, easy voucher downloads, and account management, along with a robust global search. Paired with CTC CMS, the content can be dynamically tailored to user preferences and demographics, ensuring an engaging and personalized experience for all.",
     techStack: [
       "NestJs",
       "Typescript",
@@ -51,7 +51,7 @@ const EXPERIENCE = [
     category: "Content Management System",
     title: "Changi Travel Circle CMS",
     description:
-      "Equips administrators with powerful features for effective user data management while maintaining high security standards. Automated scheduling promptly eliminates expired promotions, ensuring continuous user engagement. A key highlight is dynamic content segmentation, delivering personalized content based on user demographics and behavior, distinguishing our CMS as a pioneer in travel industry content management.",
+      "Provides administrators with robust tools for secure user data management. Automated scheduling removes expired promotions promptly, keeping user engagement high. The highlight feature is dynamic content segmentation, which delivers personalized content based on user demographics and behavior, setting our CMS apart in the travel industry.",
     techStack: [
       "NestJs",
       "Typescript",

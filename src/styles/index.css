@@ -309,7 +309,7 @@ h2 {
     }
     .experience-item {
       @apply flex-row items-start pl-48;
-      height: 77vh;
+      height: 73vh;
       .experience-item-content {
         @apply pt-10;
       }
