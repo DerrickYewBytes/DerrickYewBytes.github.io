@@ -2,24 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
 @layer base {
   @font-face {
     font-family: "Outfit";
     src: url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
   }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  font-family: Outfit, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
 }
 
 ::-webkit-scrollbar {
@@ -29,9 +16,14 @@
 html,
 body {
   @apply bg-babyPowder;
-  height: 100%;
-  font-family: sans-serif;
-  line-height: 1.5;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1rem !important;
+  font-family: Outfit, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  font-weight: 400 !important;
+  height: 100% !important;
+  line-height: 1.5 !important;
 }
 
 a {
@@ -85,8 +77,6 @@ h2 {
 @layer utilities {
   .central-content {
     @apply px-6 md:px-32 lg:px-48;
-
-
   }
   .remove-central-content {
     @apply px-0;
@@ -152,7 +142,8 @@ h2 {
 }
 
 #hero {
-  @apply flex flex-col gap-12 mb-28 lg:flex-row;
+  @apply flex flex-col gap-12 mb-28 pt-24 lg:flex-row;
+  @apply snap-center;
 
   @media (min-width: 1268px) {
     gap: 6rem;
@@ -237,6 +228,7 @@ h2 {
 
 #about {
   @apply bg-blue-deep;
+  @apply snap-center;
 
   .content {
     @apply pb-20;
@@ -275,6 +267,7 @@ h2 {
 
 #experience {
   @apply central-content;
+  @apply snap-center;
 
   h1 {
     @apply mb-16 text-blue-deep;
@@ -335,6 +328,8 @@ h2 {
 
 #contact {
   @apply bg-sands-light;
+  @apply snap-center;
+
   .content {
     @apply pb-20;
   }

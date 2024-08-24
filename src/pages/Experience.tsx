@@ -69,7 +69,7 @@ const Experience = (props: Props) => {
     <>
       <div
         id="experience"
-        className="page-top-spacing"
+        className="page-top-spacing snap-always snap-center"
         ref={props.reference}
       >
         <div>

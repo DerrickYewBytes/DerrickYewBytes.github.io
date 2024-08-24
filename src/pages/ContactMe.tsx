@@ -10,7 +10,7 @@ const ContactMe = (props: Props) => {
   }
   return (
     <>
-      <div id="contact" ref={props.reference} className="central-content page-top-spacing">
+      <div id="contact" ref={props.reference} className="central-content page-top-spacing snap-always snap-end">
         <div className="content">
           <h1>Say Hello</h1>
           <section className="contact-links">

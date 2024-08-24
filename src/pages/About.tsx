@@ -55,7 +55,7 @@ const techstack = [
 const About = (props: Props) => {
   return (
     <>
-      <div id="about" ref={props.reference} className="central-content page-top-spacing">
+      <div id="about" ref={props.reference} className="central-content page-top-spacing snap-always snap-center">
         <div className="content">
           <h1>About</h1>
           <h2>Who am I?</h2>

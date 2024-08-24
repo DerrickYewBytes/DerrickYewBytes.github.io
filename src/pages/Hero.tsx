@@ -12,7 +12,7 @@ const Hero = (props: Props) => {
     <div
       id="hero"
       ref={props.reference}
-      className="central-content page-top-spacing"
+      className="central-content snap-always snap-start"
     >
       {props.screenSize === "large" ? (
         <>
