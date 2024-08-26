@@ -9,7 +9,9 @@
     "build:css": "postcss src/styles/index.css --use postcss-import --use autoprefixer --use cssnano --no-map -o src/styles/output.css",
     "watch:css": "postcss src/styles/index.css --use postcss-import --use autoprefixer --use cssnano --no-map -o src/styles/output.css -w --verbose",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "antd": "^5.20.1",
@@ -31,6 +33,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
     "postcss-conditionals": "^2.1.0",
