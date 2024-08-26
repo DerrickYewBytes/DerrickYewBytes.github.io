@@ -14,7 +14,7 @@ import MySQLIcon from "../assets/logos/MySQL.png";
 import NestjsIcon from "../assets/logos/Nestjs.png";
 import NextjsIcon from "../assets/logos/Nextjs.png";
 import NodejsIcon from "../assets/logos/Nodejs.png";
-import PostgresSQlIcon from "../assets/logos/PostgresSQl.png";
+import PostgresSQlIcon from "../assets/logos/PostgresSQL.png";
 import PythonIcon from "../assets/logos/Python.png";
 import ReactIcon from "../assets/logos/React.png";
 import ReduxIcon from "../assets/logos/Redux.png";
