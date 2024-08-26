@@ -23,7 +23,7 @@ const ContactMe = (props: Props) => {
                 derrickyewbytes@gmail.com
               </a>
               <a
-                href="derrickyewbytes.github.io/derrick-yew-resume.pdf"
+                href="https://github.com/DerrickYewBytes/DerrickYewBytes.github.io/blob/main/derrick-yew-resume.pdf"
                 target="_blank"
               >
                 Get my resume
