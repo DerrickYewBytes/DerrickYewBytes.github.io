@@ -167,13 +167,25 @@ h2 {
 
     .mobile-menu {
       @apply absolute bg-slate-400 h-svh w-svw top-0 right-0 central-content;
+      @apply transform translate-x-full transition-transform duration-500 ease-in-out;
+      
+      .close {
+        @apply translate-x-full;
+      }
+
+      &.open {
+        @apply translate-x-0;
+      }
+      
+      animation-duration: 0.6s;
+      animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+      animation-name: nav;
 
       .mobile-menu-button-section {
         @apply flex justify-end py-10;
       }
 
       .mobile-menu-content {
-        /* @apply flex flex-col gap-10; */
         @apply relative right-0;
         transform: translate(0, -50%);
         bottom: -30%;
@@ -230,33 +242,6 @@ h2 {
         @apply text-babyPowder;
       }
     }
-
-    .close-icon {
-      @apply absolute top-5 right-5 text-3xl cursor-pointer;
-    }
-
-    .mobile-menu-content {
-      @apply flex flex-col gap-10 text-center;
-    }
-
-    .link {
-      @apply text-2xl;
-    }
-  }
-
-  /* Media query to show desktop nav on larger screens */
-  @media (min-width: 1268px) {
-    .desktop-nav {
-      @apply flex; /* Show desktop nav on larger screens */
-    }
-
-    .mobile-nav {
-      @apply hidden; /* Hide mobile nav on larger screens */
-    }
-  }
-  .link {
-    @apply text-xl;
-    line-height: 1;
   }
 }
 
@@ -505,11 +490,6 @@ h2 {
 }
 @layer components {
   .carousel-wrapper {
-    --carousel-card-num-in-screen: 1;
-    --carousel-card-width: calc(80vw / var(--carousel-card-num-in-screen));
-    --carousel-width: calc(
-      var(--carousel-card-width) * var(--carousel-card-num-in-screen)
-    );
     @apply overflow-hidden relative;
     .carousel {
       @apply flex flex-row transition-transform duration-500 ease-in-out;

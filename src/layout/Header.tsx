@@ -73,26 +73,24 @@ const Header = (props: Props) => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
             }}
           />
-          {isMobileMenuOpen && (
-            <>
-              <div className="mobile-menu">
-                <div className="mobile-menu-button-section">
-                  <Button
-                    type="text"
-                    size="large"
-                    className="mobile-menu-close-button"
-                    icon={<CloseOutlined className="menu-icon" />}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  />
-                </div>
-                <div className="mobile-menu-content">
-                  <div className="mobile-menu-content-fixed">
-                    <HeaderNav handleClick={handleClick} />
-                  </div>
-                </div>
+          <div
+            className={`mobile-menu ${isMobileMenuOpen ? "open" : "close"} `}
+          >
+            <div className="mobile-menu-button-section">
+              <Button
+                type="text"
+                size="large"
+                className="mobile-menu-close-button"
+                icon={<CloseOutlined className="menu-icon" />}
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+            </div>
+            <div className="mobile-menu-content">
+              <div className="mobile-menu-content-fixed">
+                <HeaderNav handleClick={handleClick} />
               </div>
-            </>
-          )}
+            </div>
+          </div>
         </div>
       </div>
     </>
