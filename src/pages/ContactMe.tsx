@@ -19,10 +19,15 @@ const ContactMe = (props: Props) => {
           <h1>Say Hello</h1>
           <section className="contact-links">
             <div className="row">
-              <a href="mailto:yewcm123@gmail.com">
-                yewcm123@gmail.com
+              <a href="mailto:derrickyewbytes@gmail.com">
+                derrickyewbytes@gmail.com
               </a>
-              <a href="src/assets/resume/derrick-yew-resume.pdf" download="Derrick_Yew_Resume">Get my resume</a>
+              <a
+                href="/assets/resume/derrick-yew-resume.pdf"
+                download="Derrick_Yew_Resume"
+              >
+                Get my resume
+              </a>
             </div>
             <div className="row">
               <a onClick={() => handleClick(LINKEDIN_URL)}>LinkedIn</a>
@@ -35,7 +40,10 @@ const ContactMe = (props: Props) => {
             <p>© Derrick Yew Choon Min 2024.</p>
             <div className="footer-social">
               <img src={GithubLogo} onClick={() => handleClick(GITHUB_URL)} />
-              <img src={LinkedinLogo} onClick={() => handleClick(LINKEDIN_URL)} />
+              <img
+                src={LinkedinLogo}
+                onClick={() => handleClick(LINKEDIN_URL)}
+              />
             </div>
           </div>
         </div>
