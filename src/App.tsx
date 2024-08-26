@@ -93,8 +93,8 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div className="max-h-screen overflow-y-scroll snap-y snap-mandatory">
+    <>      <div className="">
+
         <Header
           referenceList={{
             hero: heroRef,
@@ -104,7 +104,6 @@ function App() {
           }}
           currentSection={currentSection}
         />
-
         <Hero screenSize={windowDimension} reference={heroRef} />
         <About reference={aboutRef} />
         <Experience screenSize={windowDimension} reference={experienceRef} />

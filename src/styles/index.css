@@ -99,42 +99,161 @@ h2 {
     font-size: inherit;
     color: var(--dark-sand);
   }
+
+  .snap-container {
+    @apply scroll-smooth max-h-screen overflow-y-scroll snap-y snap-mandatory;
+    overscroll-behavior: none;
+  }
+
+  .snap-child {
+    @apply snap-center;
+  }
 }
 
 #header {
-  @apply z-50 flex justify-between align-middle sticky top-0 py-10;
-
-  a {
-    &:hover {
-      @apply cursor-pointer;
-    }
-  }
+  @apply z-40 flex justify-between align-middle sticky top-0 py-10;
 
   &.whitebg {
-    @apply bg-babyPowder;
+    @apply bg-babyPowder !important;
+    .mobile-menu {
+      @apply bg-babyPowder !important;
+    }
     a {
-      @apply text-blue-deep;
+      @apply text-blue-deep !important;
+    }
+    .menu-icon {
+      @apply text-blue-deep !important;
     }
   }
 
   &.bluebg {
-    @apply bg-blue-deep;
+    @apply bg-blue-deep !important;
+    .mobile-menu {
+      @apply bg-blue-deep !important;
+    }
     a {
-      @apply text-babyPowder;
+      @apply text-babyPowder !important;
+    }
+    .menu-icon {
+      @apply text-babyPowder !important;
     }
   }
 
   &.sandbg {
-    @apply bg-sands-light;
+    @apply bg-sands-light !important;
+    .mobile-menu {
+      @apply bg-sands-light !important;
+    }
     a {
-      @apply text-blue-deep;
+      @apply text-blue-deep !important;
+    }
+    .menu-icon {
+      @apply text-blue-deep !important;
     }
   }
+
   .home {
-    @apply text-3xl font-medium;
-    line-height: 0;
+    @apply text-3xl font-medium leading-none;
   }
 
+  .nav {
+    &.desktop {
+      @apply hidden;
+    }
+
+    &.mobile {
+      @apply block;
+    }
+
+    .mobile-menu {
+      @apply absolute bg-slate-400 h-svh w-svw top-0 right-0 central-content;
+
+      .mobile-menu-button-section {
+        @apply flex justify-end py-10;
+      }
+
+      .mobile-menu-content {
+        /* @apply flex flex-col gap-10; */
+        @apply relative right-0;
+        transform: translate(0, -50%);
+        bottom: -30%;
+
+        .header-links {
+          @apply flex flex-col gap-20 items-end pt-[20%];
+
+          a {
+            @apply text-4xl;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1268px) {
+    .nav {
+      &.desktop {
+        @apply block;
+      }
+      &.mobile {
+        @apply hidden;
+      }
+
+      .header-links {
+        @apply flex gap-10;
+      }
+    }
+  }
+}
+
+#header-old {
+  .desktop-nav {
+    @apply hidden;
+  }
+
+  .mobile-nav {
+    @apply block;
+    .menu-icon {
+      @apply text-2xl;
+    }
+  }
+
+  .mobile-menu {
+    @apply fixed top-0 right-0 h-full w-full bg-blue-deep text-babyPowder;
+    @apply flex flex-col items-center justify-center gap-10 transform translate-x-full transition-transform duration-500 ease-in-out;
+
+    &.open {
+      @apply translate-x-0; /* Slide in from the right */
+      .menu-icon {
+        @apply text-babyPowder;
+      }
+      a {
+        @apply text-babyPowder;
+      }
+    }
+
+    .close-icon {
+      @apply absolute top-5 right-5 text-3xl cursor-pointer;
+    }
+
+    .mobile-menu-content {
+      @apply flex flex-col gap-10 text-center;
+    }
+
+    .link {
+      @apply text-2xl;
+    }
+  }
+
+  /* Media query to show desktop nav on larger screens */
+  @media (min-width: 1268px) {
+    .desktop-nav {
+      @apply flex; /* Show desktop nav on larger screens */
+    }
+
+    .mobile-nav {
+      @apply hidden; /* Hide mobile nav on larger screens */
+    }
+  }
   .link {
     @apply text-xl;
     line-height: 1;
@@ -143,7 +262,7 @@ h2 {
 
 #hero {
   @apply flex flex-col gap-12 mb-28 pt-24 lg:flex-row;
-  @apply snap-center;
+  @apply snap-child;
 
   @media (min-width: 1268px) {
     gap: 6rem;
@@ -228,7 +347,7 @@ h2 {
 
 #about {
   @apply bg-blue-deep;
-  @apply snap-center;
+  @apply snap-child;
 
   .content {
     @apply pb-20;
@@ -267,7 +386,7 @@ h2 {
 
 #experience {
   @apply central-content;
-  @apply snap-center;
+  @apply snap-child;
 
   h1 {
     @apply mb-16 text-blue-deep;
@@ -328,7 +447,7 @@ h2 {
 
 #contact {
   @apply bg-sands-light;
-  @apply snap-center;
+  @apply snap-child;
 
   .content {
     @apply pb-20;

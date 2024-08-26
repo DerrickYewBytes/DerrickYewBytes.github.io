@@ -1,4 +1,6 @@
-import { redirect } from "react-router-dom";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import { useState } from "react";
 type Props = {
   referenceList: {
     hero: React.RefObject<HTMLDivElement>;
@@ -10,7 +12,10 @@ type Props = {
 };
 
 const Header = (props: Props) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   function handleClick(link: "hero" | "about" | "experience" | "contact") {
+    setIsMobileMenuOpen(false);
     switch (link) {
       case "hero":
         props.referenceList.hero.current?.scrollIntoView({
@@ -36,14 +41,15 @@ const Header = (props: Props) => {
   }
 
   const setHeaderColor = () => {
-    if (props.currentSection === "hero") {
-      return "whitebg";
-    } else if (props.currentSection === "about") {
-      return "bluebg";
-    } else if (props.currentSection === "experience") {
-      return "whitebg";
-    } else if (props.currentSection === "contact") {
-      return "sandbg";
+    switch (props.currentSection) {
+      case "hero":
+        return "whitebg";
+      case "about":
+        return "bluebg";
+      case "experience":
+        return "whitebg";
+      case "contact":
+        return "sandbg";
     }
   };
 
@@ -55,17 +61,60 @@ const Header = (props: Props) => {
             derrick yew
           </a>
         </div>
-        <div className="flex gap-10">
-          <a className="link" onClick={() => handleClick("about")}>
-            about
-          </a>
-          <a className="link" onClick={() => handleClick("experience")}>
-            experience
-          </a>
-          <a className="link" onClick={() => handleClick("contact")}>
-            contact
-          </a>
+        <div className="nav desktop">
+          <HeaderNav handleClick={handleClick} />
         </div>
+        <div className="nav mobile">
+          <Button
+            type="text"
+            size="large"
+            icon={<MenuOutlined className="menu-icon" />}
+            onClick={() => {
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
+          />
+          {isMobileMenuOpen && (
+            <>
+              <div className="mobile-menu">
+                <div className="mobile-menu-button-section">
+                  <Button
+                    type="text"
+                    size="large"
+                    className="mobile-menu-close-button"
+                    icon={<CloseOutlined className="menu-icon" />}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  />
+                </div>
+                <div className="mobile-menu-content">
+                  <div className="mobile-menu-content-fixed">
+                    <HeaderNav handleClick={handleClick} />
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
+
+type HeaderNavProps = {
+  handleClick: (link: "hero" | "about" | "experience" | "contact") => void;
+};
+const HeaderNav = ({ handleClick }: HeaderNavProps) => {
+  return (
+    <>
+      <div className="header-links">
+        <a className="link" onClick={() => handleClick("about")}>
+          about
+        </a>
+        <a className="link" onClick={() => handleClick("experience")}>
+          experience
+        </a>
+        <a className="link" onClick={() => handleClick("contact")}>
+          contact
+        </a>
       </div>
     </>
   );
