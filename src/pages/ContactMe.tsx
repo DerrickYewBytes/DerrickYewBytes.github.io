@@ -2,7 +2,7 @@ import GithubLogo from "../assets/github-filled.png";
 import LinkedinLogo from "../assets/linkedin-filled.png";
 import { GITHUB_URL, LINKEDIN_URL } from "../constants/links";
 
-type Props = {};
+type Props = { reference: React.RefObject<HTMLDivElement> };
 
 const ContactMe = (props: Props) => {
   function handleClick(link: string) {
@@ -10,7 +10,11 @@ const ContactMe = (props: Props) => {
   }
   return (
     <>
-      <div id="contact" className="central-content page-top-spacing">
+      <div
+        id="contact"
+        ref={props.reference}
+        className="central-content page-top-spacing snap-always snap-end"
+      >
         <div className="content">
           <h1>Say Hello</h1>
           <section className="contact-links">
@@ -30,8 +34,8 @@ const ContactMe = (props: Props) => {
           <div className="footer">
             <p>© Derrick Yew Choon Min 2024.</p>
             <div className="footer-social">
-              <img src={GithubLogo} />
-              <img src={LinkedinLogo} />
+              <img src={GithubLogo} onClick={() => handleClick(GITHUB_URL)} />
+              <img src={LinkedinLogo} onClick={() => handleClick(LINKEDIN_URL)} />
             </div>
           </div>
         </div>

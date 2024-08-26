@@ -1,12 +1,19 @@
+import { Button } from "antd";
 import MyPhoto from "../assets/my-photo.jpg";
-import { Button } from "@material-tailwind/react";
 import { GITHUB_URL, LINKEDIN_URL } from "../constants/links";
 
-type Props = { screenSize: "large" | "medium" | "small" };
+type Props = {
+  screenSize: "large" | "medium" | "small";
+  reference: React.RefObject<HTMLDivElement>;
+};
 
 const Hero = (props: Props) => {
   return (
-    <div id="hero" className="central-content page-top-spacing">
+    <div
+      id="hero"
+      ref={props.reference}
+      className="central-content snap-always snap-start"
+    >
       {props.screenSize === "large" ? (
         <>
           <HeroSection />
@@ -46,9 +53,9 @@ const HeroSection = () => {
       </div>
       <div className="greet-buttons">
         <Button
-          variant="filled"
-          ripple
-          className="bg-blue-deep"
+          type="primary"
+          size="large"
+          className="px-8 py-4 bg-blue-deep"
           onClick={() => {
             handleClick(LINKEDIN_URL);
           }}
@@ -56,9 +63,8 @@ const HeroSection = () => {
           Linkedin
         </Button>
         <Button
-          variant="outlined"
-          ripple
-          className="border-2 border-sands-dark text-blue-deep"
+          className="px-8 py-4 border-2 border-sands-dark text-blue-deep"
+          size="large"
           onClick={() => handleClick(GITHUB_URL)}
         >
           Github

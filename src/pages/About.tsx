@@ -23,7 +23,7 @@ import TailwindCssIcon from "../assets/logos/Tailwind CSS.png";
 import TypeScriptIcon from "../assets/logos/TypeScript.png";
 import Vite from "../assets/logos/vite.png";
 
-type Props = {};
+type Props = { reference: React.RefObject<HTMLDivElement> };
 
 const techstack = [
   { id: "01", name: "JavaScript (ES6+)", icon: JavaScriptIcon },
@@ -55,7 +55,7 @@ const techstack = [
 const About = (props: Props) => {
   return (
     <>
-      <div id="about" className="central-content page-top-spacing">
+      <div id="about" ref={props.reference} className="central-content page-top-spacing snap-always snap-center">
         <div className="content">
           <h1>About</h1>
           <h2>Who am I?</h2>
