@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function getWindowDimensions(): 'small' | 'medium' | 'large' {
-    const { innerWidth: width, innerHeight: height } = window;
+    const { innerWidth: width } = window;
 
     if (width < 768) {
         return 'small';

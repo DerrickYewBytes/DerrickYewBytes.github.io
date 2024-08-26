@@ -1,7 +1,6 @@
-import DWPImg from "../assets/dating-pexels.png";
-import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 import CTCCMSImg from "../assets/ctc-cms.png";
 import CTCImg from "../assets/ctc.png";
+import DWPImg from "../assets/dating-pexels.png";
 import CarouselCustom from "../components/CarouselCustom";
 
 type Props = {

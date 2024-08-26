@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Button } from "antd";
+import { useState } from "react";
 
 type Props = {
   data: any[];
@@ -47,7 +47,7 @@ const CarouselCustom = (props: Props) => {
           disabled={handleButtonDisabled("left")}
         ></Button>
         <div className="indicator">
-          {props.data.slice(0, props.data.length).map((item, index) => (
+          {props.data.slice(0, props.data.length).map((_, index) => (
             <button
               key={index}
               onClick={() => handleDotClick(index)}
