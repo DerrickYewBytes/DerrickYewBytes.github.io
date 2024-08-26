@@ -19,10 +19,10 @@ const ContactMe = (props: Props) => {
           <h1>Say Hello</h1>
           <section className="contact-links">
             <div className="row">
-              <a onClick={() => handleClick("www.google.com")}>
+              <a href="mailto:yewcm123@gmail.com">
                 yewcm123@gmail.com
               </a>
-              <a onClick={() => handleClick("www.google.com")}>Get my resume</a>
+              <a href="src/assets/resume/derrick-yew-resume.pdf" download="Derrick_Yew_Resume">Get my resume</a>
             </div>
             <div className="row">
               <a onClick={() => handleClick(LINKEDIN_URL)}>LinkedIn</a>
