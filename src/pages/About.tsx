@@ -21,7 +21,7 @@ import ReduxIcon from "../assets/logos/Redux.png";
 import SassIcon from "../assets/logos/Sass.png";
 import TailwindCssIcon from "../assets/logos/Tailwind CSS.png";
 import TypeScriptIcon from "../assets/logos/TypeScript.png";
-import Vite from "../assets/logos/vite.png";
+import Vite from "../assets/logos/Vite.png";
 
 type Props = { reference: React.RefObject<HTMLDivElement> };
 
