@@ -153,7 +153,7 @@ h2 {
   }
 
   .home {
-    @apply text-3xl font-medium leading-none;
+    @apply text-3xl font-medium leading-none cursor-pointer;
   }
 
   .nav {
@@ -194,7 +194,7 @@ h2 {
           @apply flex flex-col gap-20 items-end pt-[20%];
 
           a {
-            @apply text-4xl;
+            @apply text-4xl cursor-pointer;
           }
         }
       }
@@ -212,34 +212,10 @@ h2 {
 
       .header-links {
         @apply flex gap-10;
-      }
-    }
-  }
-}
 
-#header-old {
-  .desktop-nav {
-    @apply hidden;
-  }
-
-  .mobile-nav {
-    @apply block;
-    .menu-icon {
-      @apply text-2xl;
-    }
-  }
-
-  .mobile-menu {
-    @apply fixed top-0 right-0 h-full w-full bg-blue-deep text-babyPowder;
-    @apply flex flex-col items-center justify-center gap-10 transform translate-x-full transition-transform duration-500 ease-in-out;
-
-    &.open {
-      @apply translate-x-0; /* Slide in from the right */
-      .menu-icon {
-        @apply text-babyPowder;
-      }
-      a {
-        @apply text-babyPowder;
+        a {
+          @apply cursor-pointer;
+        }
       }
     }
   }
@@ -458,9 +434,9 @@ h2 {
       @apply flex flex-col gap-8 mb-8 min-w-48;
 
       a {
-        @apply text-blue-deep font-bold;
+        @apply text-blue-deep font-bold ;
         &:hover {
-          @apply underline cursor-pointer;
+          @apply underline cursor-pointer no-underline;
         }
       }
     }
@@ -483,7 +459,7 @@ h2 {
     .footer-social {
       @apply flex gap-2 items-center;
       img {
-        @apply w-5 h-5;
+        @apply w-5 h-5 cursor-pointer;
       }
     }
   }
