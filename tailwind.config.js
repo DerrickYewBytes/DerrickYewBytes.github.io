@@ -8,6 +8,9 @@ export default {
       'lg': '1268px'
     },
     extend: {
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+      },
       colors: {
         blue: {
           deep: "#2D5BE4",
