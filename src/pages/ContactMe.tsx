@@ -1,6 +1,7 @@
 import GithubLogo from "../assets/github-filled.png";
 import LinkedinLogo from "../assets/linkedin-filled.png";
 import { GITHUB_URL, LINKEDIN_URL } from "../constants/links";
+import resumePdf from "../../public/derrick-yew-resume.pdf"
 
 type Props = { reference: React.RefObject<HTMLDivElement> };
 
@@ -23,7 +24,7 @@ const ContactMe = (props: Props) => {
                 derrickyewbytes@gmail.com
               </a>
               <a
-                href="https://github.com/DerrickYewBytes/DerrickYewBytes.github.io/blob/main/derrick-yew-resume.pdf"
+                href={resumePdf}
                 target="_blank"
               >
                 Get my resume
